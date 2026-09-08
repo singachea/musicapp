@@ -1,0 +1,26 @@
+[package]
+name = "music-tags"
+version = "0.2.0"
+description = "Desktop music tag editor and file renamer"
+authors = ["Ream Lim"]
+license = "MIT"
+repository = "https://github.com/singachea/musicapp"
+edition = "2021"
+
+[lib]
+# Unique from the bin name; required on Windows.
+# https://github.com/rust-lang/cargo/issues/8519
+name = "music_tags_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+lofty = "0.24.0"
+tauri-plugin-dialog = "2.7.1"
+base64 = "0.22.1"
+
